@@ -17,6 +17,6 @@ class Solution:
 
         return max(current_max, substring_len)
 
-    def lengthOfLongestSubstring(self, s: str) -> int:
+    def length_of_longest_substring(self, s: str) -> int:
         max_substring = self.compile_substrings(s, 0)
         return max_substring
