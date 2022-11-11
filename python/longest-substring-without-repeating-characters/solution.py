@@ -1,9 +1,8 @@
 from collections import defaultdict
-from typing import List
 
 
 class Solution:
-    def compile_substrings(self, s: str, all_substrings: List[int]) -> List[int]:
+    def compile_substrings(self, s: str, current_max: int) -> int:
         substring = ""
         chars_found = defaultdict(lambda: None)
 
@@ -12,14 +11,12 @@ class Solution:
                 substring += char
                 chars_found[char] = index
             else:
-                all_substrings.append(len(substring))
                 return self.compile_substrings(
-                    s[chars_found[char] + 1 :], all_substrings
+                    s[chars_found[char] + 1 :], max(current_max, len(substring))
                 )
 
-        all_substrings.append(len(substring))
-        return all_substrings
+        return max(current_max, len(substring))
 
     def lengthOfLongestSubstring(self, s: str) -> int:
-        all_substrings = self.compile_substrings(s, [])
-        return max(all_substrings)
+        max_substring = self.compile_substrings(s, 0)
+        return max_substring
