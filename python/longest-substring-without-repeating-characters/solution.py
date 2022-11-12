@@ -6,6 +6,9 @@ class Solution:
         substring_len = 0
         chars_found = defaultdict(lambda: None)
 
+        if current_max >= len(s):
+            return current_max
+
         for index, char in enumerate(s):
             if chars_found[char] is None:
                 substring_len += 1
@@ -17,6 +20,6 @@ class Solution:
 
         return max(current_max, substring_len)
 
-    def length_of_longest_substring(self, s: str) -> int:
+    def lengthOfLongestSubstring(self, s: str) -> int:
         max_substring = self.compile_substrings(s, 0)
         return max_substring
