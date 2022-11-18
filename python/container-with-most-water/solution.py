@@ -36,7 +36,7 @@ class Solution:
 
         self.adjust_indexes(height, left_height, right_height)
 
-    def maxArea(self, height: List[int]) -> int:
+    def max_area(self, height: List[int]) -> int:
         self.right_index = len(height) - 1
 
         while self.left_index < self.right_index:
