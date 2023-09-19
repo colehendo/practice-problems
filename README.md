@@ -1,2 +1,2 @@
 # practice-problems
-A collection of different coding problems and my solutions to each
+This is a set of ever-expanding practice problems found on websites like LeetCode and HackerRank, along with my solution to each of the problems. Currently, the solutions are only in Python, although I plan to expand beyond that as I dive deeper into other languages.
